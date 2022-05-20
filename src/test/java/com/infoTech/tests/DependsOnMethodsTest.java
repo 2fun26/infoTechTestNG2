@@ -9,30 +9,30 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class PriorityTest {
+public class DependsOnMethodsTest {
 
-WebDriver driver;
-@BeforeClass
+    WebDriver driver;
+    @BeforeClass
     public void setUp(){
 
-    WebDriverManager.chromedriver().setup();
-    driver = new ChromeDriver();
-    driver.manage().window().maximize();
-    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-}
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
 
-@Test (priority=2)
+    @Test
     public void amazonArama(){
 
-    driver.get("https://amazon.com");
-}
+        driver.get("https://amazon.com");
+    }
 
-    @Test (priority=1)
+    @Test
     public void googleArama(){
         driver.get("http://google.com");
     }
 
-    @Test (priority=0)
+    @Test
     public void facebookArama(){
         driver.get("http://facebook.com");
     }
@@ -41,5 +41,4 @@ WebDriver driver;
     public void tearDown(){
         driver.quit();
     }
-
 }
