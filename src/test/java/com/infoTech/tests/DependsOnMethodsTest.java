@@ -21,20 +21,20 @@ public class DependsOnMethodsTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @Test
-    public void amazonArama(){
-
-        driver.get("https://amazon.com");
-    }
-
-    @Test
+    @Test (dependsOnMethods = "facebookArama")
     public void googleArama(){
         driver.get("http://google.com");
     }
 
-    @Test
+    @Test (dependsOnMethods = "amazonArama")
     public void facebookArama(){
         driver.get("http://facebook.com");
+    }
+
+    @Test
+    public void amazonArama(){
+
+        driver.get("https://amazon.com");
     }
 
     @AfterClass
