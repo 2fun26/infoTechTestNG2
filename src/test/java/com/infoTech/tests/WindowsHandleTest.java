@@ -10,7 +10,7 @@ import java.util.Set;
 public class WindowsHandleTest extends TestBase {
 
     @Test
-    public void WindowsHandle(){
+    public void WindowsHandle() throws InterruptedException {
 
     driver.get("https://the-internet.herokuapp.com/windows");
 
@@ -27,5 +27,16 @@ public class WindowsHandleTest extends TestBase {
 
             System.out.println(w);
         }
+
+        //Set olan listemizi once Array' e ceviriyoruz.
+        Object[] array = (Object[]) tumElementler.toArray();
+
+        //istediginiz sayfanin indexini yazip cagiriyoruz.
+        String sonSayfaHandle = array[array.length-1].toString();
+        System.out.println("Son sayfa Handle ==> "+sonSayfaHandle);
+
+        Thread.sleep(3000);
+        driver.switchTo().window(handle);
+       // driver.switchTo().window("9C1DBC1FFC1205F5DE1089CBC6E84ED4");
     }
 }
