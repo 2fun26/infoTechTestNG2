@@ -72,7 +72,9 @@ public class Ornek_AmazonKayitSayfasi extends TestBase {
         String title3 = driver.getTitle();
         System.out.println("title3 ==> " + title3);
 
-
+        SoftAssert assert2 = new SoftAssert();
+        assert2.assertEquals(title3,"Authentication required");
+        assert2.assertAll();
     }
 
 }
