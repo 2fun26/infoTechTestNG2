@@ -66,7 +66,7 @@ public class Ornek_AmazonKayitSayfasi extends TestBase {
         sifreOnay.sendKeys("123456");
 
         WebElement onaylama = driver.findElement(By.id("continue"));
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         onaylama.click();
 
         String title3 = driver.getTitle();
