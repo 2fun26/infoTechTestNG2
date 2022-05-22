@@ -35,7 +35,7 @@ public class SoftAssertTest {
 //        Assert.assertTrue();
 //        Assert.assertFalse();
 
-
+        // softAssert basarisiz oldugunda program calismaya devam eder. hangilerinin basarisiz oldugunu softAssert.assertAll() ile ogreniriz.
         softAssert.assertTrue(baslik.contains("Amazon"));
         softAssert.assertEquals("Amazon.com. Spend less. Smile more.",baslik);
         softAssert.assertFalse(baslik.contains("Car"));

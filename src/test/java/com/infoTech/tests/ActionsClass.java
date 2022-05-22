@@ -13,7 +13,7 @@ public class ActionsClass extends TestBase {
         Actions actions=new Actions(driver);
         //Actions class ile islem yapariz,her seferinde "PERFORM() kullanmak zorundasiniz
         Thread.sleep(3000);
-        actions.contextClick(element).perform();
+        actions.contextClick(element).perform();  
     }
     @Test
     public void ciftTiklama() throws InterruptedException {
