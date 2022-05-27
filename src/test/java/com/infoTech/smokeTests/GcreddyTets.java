@@ -12,7 +12,6 @@ public class GcreddyTets extends TestBase {
 
         driver.get(ConfigurationReader.getProperty("grcreddy_link"));
         GcreddyPage page = new GcreddyPage(driver);
-        Thread.sleep(3000);
         page.grcreddy_userName.sendKeys(ConfigurationReader.getProperty("gcreddy_userName"));
         page.grcreddy_password.sendKeys(ConfigurationReader.getProperty("gcreddy_passWord"));
         page.grcreddy_login.click();
