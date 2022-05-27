@@ -16,7 +16,7 @@ WebDriver driver;
         PageFactory.initElements(driver,this);
     }
 
-    @FindBy(name="GcreddyPage")
+    @FindBy(name="username")
     public WebElement grcreddy_userName;
 
     @FindBy(name="password")
@@ -25,3 +25,5 @@ WebDriver driver;
     @FindBy(id="tdb1")
     public WebElement grcreddy_login;
 }
+
+
