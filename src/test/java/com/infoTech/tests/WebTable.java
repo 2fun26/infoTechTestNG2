@@ -71,6 +71,62 @@ public class WebTable extends TestBase {
         for(WebElement hucreler:tumHucreler){
             System.out.println(hucreler.getText());
         }
+
+         /*
+        "//" ile "/" slash arasindaki fark
+        -Eger tek slash "/" eklerseniz basamk basamk gideriz.o webelementin childe manasina gelir
+            ornek://tbody/tr[2]/td[3]
+        -eger cift "//" slash eklerseniz ,bu childe olabilir onun torunu,yada torununun torunu.
+            ornek: //tbody//td[3]
+         */
     }
 
+    @Test
+    public void tumSutun() throws InterruptedException {
+        giris();
+        Thread.sleep(3000);
+        List<WebElement> tumSutun = driver.findElements(By.xpath("//tbody//td[3]"));
+        for(WebElement sutun:tumSutun){
+            System.out.println(sutun.getText());
+        }
+
+        /*
+            thread => Table head => tablonnun en ust kismi
+            tbody => Table body => tablonun govde kismi
+            tr => table row => tablodaki satir
+            td => table data => tablodaki veri
+
+         */
+    }
+
+    public void hucreYazdir(int satir, int sutun){
+
+        String xpathDegerim = "//tbody/tr["+satir+"]/td["+sutun+"]";
+
+        WebElement hucre = driver.findElement(By.xpath(xpathDegerim));
+        System.out.println(hucre.getText());
+
+    }
+
+    @Test
+    public void calistir() throws InterruptedException {
+
+        giris();
+        Thread.sleep(3000);
+
+        hucreYazdir(5,1);
+        hucreYazdir(9,2);
+        hucreYazdir(12,4);
+        hucreYazdir(15,5);
+    }
+
+    @Test
+    public void ornek(){
+        giris();
+        List<WebElement> tumSatirlar=driver.findElements(By.xpath("//tbody/tr"));
+        System.out.println("Tabloda "+tumSatirlar.size()+" tane satir vardir");
+
+        WebElement ucuncuSatir=driver.findElement(By.xpath("//tbody/tr[3]"));
+        System.out.println(ucuncuSatir.getText());
+    }
 }
