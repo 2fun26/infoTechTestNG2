@@ -2,6 +2,8 @@ package com.infoTech.tests;
 import com.infoTech.utilities.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -27,5 +29,31 @@ public class Wait extends TestBase {
  */
     }
 
+    @Test
+    public void explicitlyWait(){
+        driver.get("http://the-internet.herokuapp.com/dynamic_controls");
+        //ExplicitlyWait kullanmak icin WebDriverWait class'indan nesne uretmek zorundayiz
+        //bekleyecegimiz kosulu kac saniye bekliyecegiz onu belirleyecegiz
+        WebDriverWait wait=new WebDriverWait(driver,30);
+        WebElement romeve=driver.findElement(By.xpath("//*[.='Remove']"));
+        romeve.click();
+        //Eelementgorunene kadar bir kosul belirtmemiz gerekiyor
+        WebElement message=wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("message")));
+        System.out.println(message.getText());
+
+
+        /*
+        Thread.sleep
+        *static bir bekleme var
+        1-10 sn bekle dediginiz zaman 10 sn bekler,elementler yuklense dahi "inat eder" beklemeye devam eder
+        2-herhangi bir kosul sunamiyoruz
+
+        Explicit wait
+        *Dinamik bir calismasi vardir
+        -webElementi bulurbulmaz kodlari calistirmaya devam eder
+        -kosul ekleyebiliyoruz.
+         */
+
+    }
 
 }
