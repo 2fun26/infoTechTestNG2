@@ -1,6 +1,6 @@
 package com.infoTech.smokeTests;
 
-import com.infoTech.pages.GcreddyPage;
+import com.infoTech.smokeTests.pages.GcreddyPage;
 import com.infoTech.utilities.ConfigurationReader;
 import com.infoTech.utilities.TestBase;
 import org.testng.annotations.Test;

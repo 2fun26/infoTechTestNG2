@@ -1,4 +1,4 @@
-package com.infoTech.pages;
+package com.infoTech.smokeTests.pages;
 
 import com.infoTech.utilities.TestBase;
 import org.openqa.selenium.WebDriver;

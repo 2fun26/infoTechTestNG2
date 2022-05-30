@@ -1,6 +1,6 @@
 package com.infoTech.tests;
 
-import com.infoTech.pages.AmazonPage;
+import com.infoTech.smokeTests.pages.AmazonPage;
 import com.infoTech.utilities.TestBase;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
