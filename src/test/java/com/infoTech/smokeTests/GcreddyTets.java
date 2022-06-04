@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class GcreddyTets extends TestBase {
 
-    @Test
+    @Test(groups = {"amazon","login"})
     public void giris() throws InterruptedException {
 
         driver.get(ConfigurationReader.getProperty("grcreddy_link"));

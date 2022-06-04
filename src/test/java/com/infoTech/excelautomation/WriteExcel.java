@@ -24,8 +24,16 @@ public class WriteExcel {
         // 0. indexteki satırın, 3. indexteki hücresine NÜFUS hücresi ekleyelim
         workbook.getSheetAt(0).getRow(0).createCell(3).setCellValue("NÜFUS");
         workbook.getSheetAt(0).getRow(1).createCell(3).setCellValue("80000000");
+        workbook.getSheetAt(0).getRow(6).createCell(3).setCellValue("20000000");
+        workbook.getSheetAt(0).getRow(8).createCell(6).setCellValue("sinema");
+        workbook.getSheetAt(0).getRow(1).createCell(0).setCellValue("aksam");
+
+
+
         // yaptığımız değişiklikleri excel dosyasına aktarır, veriyi yazar ve kaydeder.
         workbook.write(fileOutputStream);
+
+        //dosyayi kapatmak icin.
         fileOutputStream.close();
         workbook.close();
         fileInputStream.close();

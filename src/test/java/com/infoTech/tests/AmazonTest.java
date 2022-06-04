@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class AmazonTest extends TestBase {
 
-    @Test
+    @Test(groups = {"amazon","login"})
     public void amazonArama(){
 
         driver.get("https://amazon.com");
